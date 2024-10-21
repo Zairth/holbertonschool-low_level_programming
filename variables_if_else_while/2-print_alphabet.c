@@ -7,11 +7,9 @@
 */
 int main(void)
 {
-	int n;
+	char c;
 
-	char alphabet[26] = {"a","b","c","d","e","f","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
-	int a_length = alphabet.length;
-	for (n = 0; n < a_length; n++)
-		putchar(alphabet[n]);
+	for (c='a'; c<='z' ; c++)
+		putchar(c);
 	return (0);
 }
