@@ -4,7 +4,7 @@
  * is
  * a
  * Documentation
-*/
+ */
 
 int main(void)
 {
