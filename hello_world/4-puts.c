@@ -1,10 +1,6 @@
 #include <stdio.h>
 
-/* This
- * is
- * a
- * Documentation
- */
+/* This is a betty Documentation */
 
 int main(void)
 {
