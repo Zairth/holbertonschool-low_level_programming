@@ -1,14 +1,15 @@
-#include <unistd.h>
 #include "main.h"
-
-int _putchar(char c);
 
 int main(void)
 {
-	int i;
-	char x[] = {'_', 'p', 'u', 't', 'c', 'h', 'a', 'r'};
-	for (i = 0; i != '\0'; i++)
-		_putchar(x[i]);
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
 	_putchar('\n');
-	return(0);
+	return (0);
 }
