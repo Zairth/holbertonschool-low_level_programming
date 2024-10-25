@@ -8,7 +8,8 @@
 **/
 void multiple_of_3_5(void)
 {
-	int i, sum;
+	int i;
+	int sum = 0;
 
 	for (i = 0; i < 1024; i++)
 	{
