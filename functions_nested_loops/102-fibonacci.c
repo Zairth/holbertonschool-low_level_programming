@@ -2,13 +2,21 @@
 #include <stdio.h>
 
 /**
- * fibonacci_50_numbers - prints the first 50 Fibonacci numbers, starting with 1 and 2, followed by a new line.
+ * fibonacci_50_numbers - prints the first 50 Fibonacci numbers
  *@void: no variable
  *Return: no return
 **/
 void fibonacci_50_numbers(void)
 {
-	
+	int i, j, fibo;
+
+	for (i = 1; i <= 50; i++)
+	{
+		for (j = n + 1; j >= i; j--)
+		{
+			printf("%d\n", i + j);
+		}
+	}
 }
 
 /**
