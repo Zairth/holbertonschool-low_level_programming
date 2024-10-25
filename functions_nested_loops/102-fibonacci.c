@@ -9,8 +9,8 @@
 void fibonacci_50_numbers(void)
 {
 	int i, j;
-	long unsigned int n0 = 1, n1 = 2;
-	long unsigned int result = 0;
+	unsigned long int n0 = 1, n1 = 2;
+	unsigned long int result = 0;
 
 	for (i = 0; i <= 47; i++)
 	{
