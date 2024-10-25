@@ -15,4 +15,5 @@ int add(int, int);
 void print_to_98(int n);
 void print_times_table(int n);
 void multiple_of_3_5(void);
+void fibonacci_50_numbers(void);
 #endif
