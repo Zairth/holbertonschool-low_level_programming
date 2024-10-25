@@ -9,17 +9,17 @@
 void fibonacci_50_numbers(void)
 {
 	int i, j;
-	unsigned long int n0 = 1, n1 = 2;
+	unsigned long int n0 = 0, n1 = 1;
 	unsigned long int result = 0;
 
-	for (i = 0; i <= 47; i++)
+	for (i = 0; i < 50; i++)
 	{
 		result = n0 + n1;
 		for (j = 1 + i; j != i; j--)
 		{
 			n0 = n1;
 			printf("%lu", result);
-			if (i != 47)
+			if (i != 49)
 				printf(", ");
 		}
 		n1 = result;
