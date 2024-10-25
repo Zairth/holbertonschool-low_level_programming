@@ -8,15 +8,23 @@
 **/
 void fibonacci_50_numbers(void)
 {
-	int i, j, fibo;
+	int i, j;
+	int n0 = 1, n1 = 2;
+	int result = 0;
 
-	for (i = 1; i <= 50; i++)
+	for (i = 0; i <= 50; i++)
 	{
-		for (j = n + 1; j >= i; j--)
+		result = n0 + n1;
+		for (j = 1 + i; j != i; j--)
 		{
-			printf("%d\n", i + j);
+			n0 = n1;
+			printf("%d", result);
+			if (i != 50)
+				printf(", ");
 		}
+		n1 = result;
 	}
+	printf("\n");
 }
 
 /**
