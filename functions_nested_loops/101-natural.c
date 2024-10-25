@@ -2,11 +2,19 @@
 #include <stdio.h>
 
 /**
-*_abs - puts the absolute value of a number
-*@n: variable that contain the number to convert
-*Return: always return 0
+*multiple_of_3_5 - print the sum of all the multiple of 3 and 5 below 1024
+*@void: no variable
+*Return: no return
 */
 void multiple_of_3_5(void)
 {
-	
+	int i, sum;
+
+	for (i = 0; i < 1024; i++)
+	{
+		if (i % 3 == 0 || i % 5 == 0)
+			sum += i;
+
+	}
+	printf("%d\n", sum);
 }
