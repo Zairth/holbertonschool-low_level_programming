@@ -6,8 +6,7 @@
  */
 int main(void)
 {
-	int i, j;
-	unsigned long int n0 = 0, n1 = 1, even_sum = 0;
+	unsigned long int n0 = 0, n1 = 1;
 	unsigned long int result = 0, sum = 0;
 
 	while (result <= 4000000)
