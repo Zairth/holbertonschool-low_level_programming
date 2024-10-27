@@ -8,15 +8,16 @@ int main(void)
 {
 	int i, j;
 	unsigned long int n0 = 0, n1 = 1, even_sum = 0;
-	unsigned long int result = 0;
+	unsigned long int result = 0, sum = 0;
 
 	while (result <= 4000000)
 	{
 		result = n0 + n1;
 		n0 = n1;
 		n1 = result;
-		if (
-		printf("%lu", result);
+		if (result % 2 == 0)
+			sum += result;
 	}
+	printf("%lu", result);
 	printf("\n");
 }
