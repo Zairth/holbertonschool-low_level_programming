@@ -6,17 +6,16 @@
  */
 int main(void)
 {
-	int first_modulo = 2;
-	long n = 612852475143;
-	long new_n = n;
+	unsigned long first_modulo = 2;
+	unsigned long n = 612852475143;
 
-	while (new_n != 1)
+	while (n != 1)
 	{
 		if (n % first_modulo == 0)
-			new_n /= first_modulo;
+			n /= first_modulo;
 		else
 			first_modulo += 1;
 	}
-	printf("%ld", new_n);
+	printf("%ld\n", first_modulo);
 	return (0);
 }
