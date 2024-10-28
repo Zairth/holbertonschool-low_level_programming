@@ -7,7 +7,9 @@
 */
 void print_number(int n)
 {
-	int unite = 0, dizaine = 0, centaine = 0, millier = 0, dizaine_millier = 0, centaine_millier = 0, million = 0, dizaine_million = 0, centaine_million = 0, milliard = 0;
+	int unite = 0, dizaine = 0, centaine = 0, millier = 0, dizaine_millier = 0;
+	int centaine_millier = 0, million = 0, dizaine_million = 0;
+	int centaine_million = 0, milliard = 0;
 
 	if (n < 0)
 	{
