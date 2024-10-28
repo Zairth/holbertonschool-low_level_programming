@@ -42,8 +42,10 @@ void print_number(int n)
 		_putchar(centaine_millier + '0');
 	}
 	if (n >= 10000)
+	{
 		dizaine_millier = (n % 100000) / 10000;
 		_putchar(dizaine_millier + '0');
+	}
 	if (n >= 1000)
 	{
 		millier = n / 1000;
