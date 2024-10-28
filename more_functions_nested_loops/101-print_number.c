@@ -31,8 +31,17 @@ void print_number(int n)
 	}
 	if (n >= 1000000)
 	{
-		million = (n
+		million = (n % 10000000) / 1000000;
+		_putchar(million + '0');
 	}
+	if (n >= 100000)
+	{
+		centaine_millier = (n % 1000000) / 100000;
+		_putchar(centaine_millier + '0');
+	}
+	if (n >= 10000)
+		dizaine_millier = (n % 100000) / 10000;
+		_putchar(dizaine_millier + '0');
 	if (n >= 1000)
 	{
 		millier = n / 1000;
