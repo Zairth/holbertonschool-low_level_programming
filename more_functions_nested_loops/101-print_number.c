@@ -48,7 +48,7 @@ void print_number(int n)
 	}
 	if (n >= 1000)
 	{
-		millier = n / 1000;
+		millier = (n % 10000) / 1000;
 		_putchar(millier + '0');
 	}
 	if (n >= 100)
