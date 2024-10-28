@@ -2,7 +2,7 @@
 
 /**
 *print_number - prints an integer.
-*@n: the integer to print
+*@n: the number to print
 *Return: void return
 */
 void print_number(int n)
@@ -10,8 +10,13 @@ void print_number(int n)
 	int unite = 0, dizaine = 0, centaine = 0, millier = 0, dizaine_millier = 0;
 	int centaine_millier = 0, million = 0, dizaine_million = 0;
 	int centaine_million = 0, milliard = 0;
-	int hit_MAX = 0;
+	int MIN_hit = 0;
 
+	if (n == -2147483648)
+	{
+		n++;
+		MIN_hit++;
+	}
 	if (n < 0)
 	{
 		n = n * (-1);
@@ -19,8 +24,6 @@ void print_number(int n)
 	}
 	if (n >= 1000000000)
 	{
-		hit_MAX = 1;
-		n -= 1;
 		milliard = n / 1000000000;
 		_putchar(milliard + '0');
 	}
@@ -65,7 +68,7 @@ void print_number(int n)
 		_putchar(dizaine + '0');
 	}
 	unite = n % 10;
-	if (hit_MAX == 1)
+	if (MIN_hit == 1)
 		unite++;
 	_putchar(unite + '0');
 }
