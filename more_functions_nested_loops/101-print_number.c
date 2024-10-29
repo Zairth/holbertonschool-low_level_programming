@@ -8,7 +8,7 @@
 void print_number(int n)
 {
 	int MIN_hit = 0;
-	int count = 8; /* Milliard etant deja imprimer et uniter aussi, count sera egale au nombre de fois ou on devra imprimer les chiffres de n */
+	int count = 8; /* Milliard = 10 chiffres. Milliard etant deja imprimer et uniter aussi, count sera egale au nombre de fois ou on devra imprimer les chiffres de n */
 	int modulo = 1000000000;
 	int division = 100000000;
 
