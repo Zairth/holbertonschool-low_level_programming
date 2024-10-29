@@ -7,10 +7,10 @@
 */
 void print_number(int n)
 {
-	int unite = 0, dizaine = 0, centaine = 0, millier = 0, dizaine_millier = 0;
-	int centaine_millier = 0, million = 0, dizaine_million = 0;
-	int centaine_million = 0, milliard = 0;
 	int MIN_hit = 0;
+	int count = 8;
+	int modulo = 1000000000;
+	int division = 100000000;
 
 	if (n == -2147483648)
 	{
@@ -22,53 +22,26 @@ void print_number(int n)
 		n = n * (-1);
 		_putchar('-');
 	}
-	if (n >= 1000000000)
+	if (n > modulo)
+		_putchar((n / 1000000000) + '0');
+	else
 	{
-		milliard = n / 1000000000;
-		_putchar(milliard + '0');
+		while (modulo / 10 > n)
+		{
+			modulo /= 10;
+			division /= 10;
+			count--;
+		}
 	}
-	if (n >= 100000000)
+	while (count != 0)
 	{
-		centaine_million = (n % 1000000000) / 100000000;
-		_putchar(centaine_million + '0');
+		_putchar(((n % modulo) / division) + '0');
+		modulo /= 10;
+		division /= 10;
+		count--;
 	}
-	if (n >= 10000000)
-	{
-		dizaine_million = (n % 100000000) / 10000000;
-		_putchar(dizaine_million + '0');
-	}
-	if (n >= 1000000)
-	{
-		million = (n % 10000000) / 1000000;
-		_putchar(million + '0');
-	}
-	if (n >= 100000)
-	{
-		centaine_millier = (n % 1000000) / 100000;
-		_putchar(centaine_millier + '0');
-	}
-	if (n >= 10000)
-	{
-		dizaine_millier = (n % 100000) / 10000;
-		_putchar(dizaine_millier + '0');
-	}
-	if (n >= 1000)
-	{
-		millier = (n % 10000) / 1000;
-		_putchar(millier + '0');
-	}
-	if (n >= 100)
-	{
-		centaine = (n % 1000) / 100;
-		_putchar(centaine + '0');
-	}
-	if (n >= 10)
-	{
-		dizaine = (n % 100) / 10;
-		_putchar(dizaine + '0');
-	}
-	unite = n % 10;
+	n %= 10;
 	if (MIN_hit == 1)
-		unite++;
-	_putchar(unite + '0');
+		n++;
+	_putchar(n + '0');
 }
