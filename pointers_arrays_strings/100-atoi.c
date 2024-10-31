@@ -9,7 +9,7 @@ int _atoi(char *s)
 {
 	int i = 0, j = 0;
 	int soustract = 0;
-	int result = 0;
+	double result = 0;
 
 	while (s[i] < '0' || s[i] > '9')
 	{
