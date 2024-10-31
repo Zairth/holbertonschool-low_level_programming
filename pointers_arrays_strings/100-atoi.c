@@ -30,7 +30,7 @@ int _atoi(char *s)
 			j++;
 		}
 		else
-			result = result * 10 + s[i] - '0';
+			result = result * 10 + (s[i] - '0');
 		i++;
 	}
 
