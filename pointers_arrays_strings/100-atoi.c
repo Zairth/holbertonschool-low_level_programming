@@ -11,11 +11,15 @@ int _atoi(char *s)
 	int soustract = 0;
 	int result = 0;
 
+
+
 	while (s[i] < '0' || s[i] > '9')
 	{
 		if (s[i] == '-')
 			soustract++;
 		i++;
+		if (s[i] == '\0')
+			return (0);
 	}
 
 	while (s[i] >= '0' && s[i] <= '9')
