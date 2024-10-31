@@ -11,8 +11,6 @@ int _atoi(char *s)
 	int soustract = 0;
 	int result = 0;
 
-
-
 	while (s[i] < '0' || s[i] > '9')
 	{
 		if (s[i] == '-')
@@ -34,7 +32,7 @@ int _atoi(char *s)
 		i++;
 	}
 
-	if (soustract % 2 != 0 && result > -2147483648)
+	if (soustract % 2 != 0)
 		result = result * -1;
 
 	return (result);
