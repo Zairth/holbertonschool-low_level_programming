@@ -18,7 +18,7 @@ int main(void)
    */
   p[5] = 98;
   /* ...so that this prints 98\n */
-  printf("a[2] = %d, %p\n", a[2], a);
-  printf("p[5] = %d, %p\n", p[5], p);
+  printf("a[2] = %d, %p\n", a[2], &a[2]);
+  printf("p[5] = %d, %p\n", p[5], &p[5]);
   return (0);
 }
