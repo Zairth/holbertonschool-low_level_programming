@@ -12,13 +12,10 @@ char *cap_string(char *c)
 
 	while (c[j] != '\0')
 	{
+		if (j == 0 && c[j] >= 'a' && c[j] <= 'z')
+			c[j] -= 32;
 		if (c[j] >= 'a' && c[j] <= 'z' && is_uppercase > 0)
-		{
-			if (c[j] == 0)
-				c[j] -= 32;
-			else
-				c[j] -= 32;
-		}
+			c[j] -= 32;
 
 		is_uppercase = 0;
 
