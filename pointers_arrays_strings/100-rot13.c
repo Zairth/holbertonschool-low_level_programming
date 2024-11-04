@@ -7,10 +7,11 @@ char *rot13(char *c)
 {
 	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	int i, j = 0;
+	int i, j;
 
 	for (i = 0; c[i] != '\0'; i++)
 	{
+		j = 0;
 		while (j < 52)
 		{
 			if (input[j] == c[i])
