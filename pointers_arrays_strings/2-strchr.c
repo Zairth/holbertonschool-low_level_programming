@@ -1,9 +1,9 @@
 /**
- *  *_strchr - locates a character in a string.
- *   *@s: the string to verify
- *    *@c: the char to compare
- *     *Return: char return
- *      **/
+ *_strchr - locates a character in a string.
+ *@s: the string to verify
+ *@c: the char to compare
+ *Return: char return
+ */
 char *_strchr(char *s, char c)
 {
 	int i;
