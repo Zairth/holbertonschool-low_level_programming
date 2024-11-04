@@ -1,5 +1,5 @@
 /**
- *_memset - fills memory with a constant byte.
+ *_memset - fill  memory with a constant byte.
  *@n: number of character to copy to the dest (*s)
  *@b: the src character to copy n times to the dest var
  *@s: the destination strings return

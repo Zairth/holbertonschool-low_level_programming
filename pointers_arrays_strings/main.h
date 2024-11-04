@@ -11,4 +11,5 @@ char *string_toupper(char *);
 char *cap_string(char *);
 char *leet(char *);
 char *rot13(char *);
+char *_memset(char *s, char b, unsigned int n);
 #endif
