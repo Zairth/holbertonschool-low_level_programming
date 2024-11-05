@@ -8,10 +8,11 @@
  */
 int main(void)
 {
-    char s1[] = "Holberton"; 
-    char s2[] = "Holbeerton"; 
-    _strcmp(s1, s2);
+    char *s = "hello, world";
+    char *f = "oleh";
+    unsigned int n;
 
-    printf("%d\n", _strcmp(s1, s2));
+    n = _strspn(s, f);
+    printf("%u\n", n);
     return (0);
 }
