@@ -1,4 +1,3 @@
-#include "main.h"
 /**
 *_strstr - locates a substring.
 *@haystack: the original string
@@ -14,8 +13,6 @@ char *_strstr(char *haystack, char *needle)
 		j++;
 	if (j > 0)
 		j--;
-	else
-		return (NULL);
 
 	for (i = 0; haystack[i] != '\0'; i++)
 	{
@@ -32,5 +29,5 @@ char *_strstr(char *haystack, char *needle)
 		i -= k;
 		k = 0;
 	}
-	return (NULL);
+	return (0);
 }
