@@ -9,6 +9,9 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i, j = 0, k = 0;
 
+	if (*needle == '\0')
+		return (haystack);
+
 	while (needle[j] != '\0')
 		j++;
 	if (j > 0)
