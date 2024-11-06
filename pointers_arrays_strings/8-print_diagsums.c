@@ -12,7 +12,7 @@ void print_diagsums(int *a, int size)
 	int result_forward = 0;
 	int result_backward = 0;
 	int j = 0, k = 0;
-	int x = 0, y = 0;
+	int n = 0;
 
 	while (i > 0)
 	{
@@ -20,6 +20,8 @@ void print_diagsums(int *a, int size)
 		i--;
 		j++;
 		k++;
-		result_backward += a[(j * size) + k];
+		result_backward += a[(size * size) - (n * size)];
 	}
 }
+
+// 0 - 4 - 8
