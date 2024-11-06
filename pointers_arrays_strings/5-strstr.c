@@ -7,8 +7,7 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j = 0, k;
-	int found_it = 0;
+	int i, j = 0, k = 0;
 
 	while (needle[j] != '\0')
 		j++;
@@ -16,16 +15,18 @@ char *_strstr(char *haystack, char *needle)
 
 	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		for (k = 0; k <= j; k++)
+		while (haystack[i] == needle[k])
 		{
-			if (haystack[i] == needle[k])
-				found_it++;
+			if (k == j)
+			{
+				haystack = haystack + i - k;
+				return (haystack);
+			}
+			i++;
+			k++;
 		}
-		if (found_it == j && found_it != 0)
-		{
-			haystack = haystack + i;
-			return (haystack);
-		}
+		i -= k;
+		k = 0;
 	}
 	return (0);
 }
