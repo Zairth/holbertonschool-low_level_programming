@@ -2,7 +2,7 @@
 
 /**
 *print_chessboard - prints the chessboard.
-*@str: string variable
+*@a: the bi dimensional array
 *Return: no return, void function
 */
 void print_chessboard(char (*a)[8])
