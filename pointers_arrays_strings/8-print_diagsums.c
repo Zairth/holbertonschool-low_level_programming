@@ -25,5 +25,6 @@ void print_diagsums(int *a, int size)
 
 		i++;
 	}
+
 	printf("%d, %d\n", result_forward, result_backward);
 }
