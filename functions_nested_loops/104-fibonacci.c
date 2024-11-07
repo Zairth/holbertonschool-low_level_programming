@@ -26,7 +26,6 @@ int main(void)
 			n0_end = n0 / 10000000;
 			n1_start = n1 % 10000000;
 			n1_end = n1 / 10000000;
-
 		}
 		if (i != 98)
 			printf(", ");
