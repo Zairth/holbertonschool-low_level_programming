@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-*print_diagsums - prints a string, followed by a new line.
+*_puts_recursion - prints a string, followed by a new line.
 *@s: the string to print
 *Return: no return, void function
 */
