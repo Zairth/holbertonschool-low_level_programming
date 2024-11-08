@@ -13,10 +13,10 @@ int main(int argc, char *argv[])
 	if (argc > 0)
 		printf("%s\n", argv[0]);
 
-	for (i = 0; i <= argc; i++)
-	{
-		printf("%d\n", i);
-	}
+	while (i <= argc)
+		i++;
+		
+	printf("%d\n", i);
 	return (0);
 }
 
