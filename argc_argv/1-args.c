@@ -6,18 +6,8 @@
  *@argv: the array of parameter
  * Return: Always 0 (Success)
 */
-int main(int argc, char *argv[])
+int main(int argc, char __attribute__((unused)) *argv[])
 {
-	int i;
-
-	if (argc > 0)
-		printf("%s\n", argv[0]);
-
-	while (i <= argc)
-		i++;
-		
-	printf("%d\n", i);
+	printf("%d\n", argc - 1);
 	return (0);
 }
-
-
