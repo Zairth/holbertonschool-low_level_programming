@@ -31,7 +31,7 @@ int **alloc_grid(int width, int height)
 
 	j = y;
 
-	while (j < 0)
+	while (j <= 0)
 	{
 		line[j] = 0;
 		j--;
