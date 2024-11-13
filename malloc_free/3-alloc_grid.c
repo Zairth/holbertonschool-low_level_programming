@@ -9,7 +9,7 @@
 */
 int **alloc_grid(int width, int height)
 {
-	int y, i, j;
+	int y, i;
 	int *line = NULL;
 	int **grid = NULL;
 
@@ -22,19 +22,17 @@ int **alloc_grid(int width, int height)
 	if (line == NULL)
 		return (NULL);
 
-	grid = malloc(sizeof(int *) * height);
+	grid = malloc(sizeof(int *) * width);
 	if (grid == NULL)
 	{
 		free(line);
 		return (NULL);
 	}
 
-	j = y;
-
-	while (j <= 0)
+	while (y < 0)
 	{
-		line[j] = 0;
-		j--;
+		line[y] = 0;
+		y--;
 	}
 
 	for (i = 0; i < height; i++)
