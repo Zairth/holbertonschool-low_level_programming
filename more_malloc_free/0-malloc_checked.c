@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-*malloc_checked - allocates memory using malloc
+*malloc_checkedy - allocates memory using malloc
 *@b: variable that contain the char
 *Return: void return
 */
