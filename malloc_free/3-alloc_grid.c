@@ -22,7 +22,7 @@ int **alloc_grid(int width, int height)
 	if (line == NULL)
 		return (NULL);
 
-	grid = malloc(sizeof(int *) * height);
+	grid = (int *)malloc(sizeof(int *) * height);
 	if (grid == NULL)
 	{
 		free(line);
