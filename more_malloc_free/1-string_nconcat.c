@@ -18,8 +18,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (c = 0; s2[c] != '\0'; c++)
 	;
 
-	if (n == NULL)
-		*s2 = '\0';
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
 	if (n >= c)
 	{
