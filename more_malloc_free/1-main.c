@@ -15,7 +15,5 @@ int main(void)
     printf("%s\n", concat);
     free(concat);
 
-	/* Best School */
-
     return (0);
 }
