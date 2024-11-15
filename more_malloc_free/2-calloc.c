@@ -5,11 +5,20 @@
 
 /**
 *_calloc - allocates memory for an array, using malloc.
-*@nmemb: first str to put in the printf
-*@size: second str to concatenate in the first one
+*@nmemb: number of element in the array
+*@size: size of the nmemb element
 *Return: void return
 */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+	int *ptr = NULL;
 
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+
+	ptr = malloc(size * nmemb);
+	if (ptr == NULL)
+		return (NULL);
+
+	return (ptr);
 }
