@@ -12,14 +12,19 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	int i, y;
+
 	/* Allouer de la mémoire pour la structure */
 	dog_t *new_dog = malloc(sizeof(dog_t));
 
 	if (new_dog == NULL)
 		return (NULL);
 
+	for (i = 0; name[i] != '\0'; i++)
+	;
+
 	/* Allouer de la mémoire pour name */
-	new_dog->name = malloc(strlen(name) + 1);
+	new_dog->name = malloc(i + 1);
 	if (new_dog->name == NULL)
 	{
 		free(new_dog);
@@ -28,8 +33,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	strcpy(new_dog->name, name);
 
+	for (y = 0; owner[y] != '\0'; y++)
+	;
+
 	/* Allouer de la mémoire pour owner */
-	new_dog->owner = malloc(strlen(owner) + 1);
+	new_dog->owner = malloc(y + 1);
 	if (new_dog->owner == NULL)
 	{
 		free(new_dog->name);
