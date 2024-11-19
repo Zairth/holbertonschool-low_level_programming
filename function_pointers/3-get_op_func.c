@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "3-calc.h"
 
+/**
+*get_op_func - selects the correct function to perform the operation
+*@s: the operator
+*Return: int return
+*/
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
@@ -14,9 +19,9 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i = 0;
 
-	while (ops[i].op != s)
+	while (ops[i].op != NULL)
 	{
-		if (ops[i].op == s)
+		if (*ops[i].op == *s)
 			return (ops[i].f);
 		i++;
 	}
