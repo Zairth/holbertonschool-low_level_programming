@@ -31,7 +31,8 @@ void print_all(const char *const format, ...)
 			if (fonc_type[j].acc_format == format[i])
 			{
 				fonc_type[j].f(args);
-				printf(", ");
+				if (format[i + 1] != '\0')
+					printf(", ");
 			}
 			j++;
 		}
@@ -81,7 +82,5 @@ void string(va_list args)
 	char *str = NULL;
 
 	str = va_arg(args, char *);
-	if (str == NULL)
-		str = "(nil)";
 	printf("%s", str);
 }
