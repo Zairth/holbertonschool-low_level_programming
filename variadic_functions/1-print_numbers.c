@@ -80,8 +80,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		if (separator != NULL && i < n - 1)
 			printf("%s%s", str, separator);
 		else
-			printf("%s\n", str); /* if last number, imprime seulement le nombre */
+			printf("%s", str); /* if last number, imprime seulement le nombre */
 	}
-
 	va_end(args);
+	printf("\n");
 }
