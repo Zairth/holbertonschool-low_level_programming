@@ -4,56 +4,84 @@
 #include "variadic_functions.h"
 
 /**
-*print_all - Write a function that prints anything.
-*@format: the format to print
-*@...: variadic arguments initialization
-*Return: void return
-*/
-void print_all(const char * const format, ...)
+ *print_all - Write a function that prints anything.
+ *@format: the format to print
+ *@...: variadic arguments initialization
+ *Return: void return
+ */
+void print_all(const char *const format, ...)
 {
-	int hint, i = 0, acc_format;
-	char charr;
-	char *str;
-	float floot;
+	f_type fonc_type[] = {
+		{'c', charr},
+		{'i', intt},
+		{'f', floatt},
+		{'s', string},
+		{0, NULL}
+	};
+	int i = 0, j;
 	va_list args;
 
 	va_start(args, format);
 
 	while (format[i] != '\0')
 	{
-		acc_format = 0;
-		if (format[i] == 'c')
+		j = 0;
+		while (fonc_type[j].acc_format != 0)
 		{
-			charr = va_arg(args, int);
-			printf("%c", charr);
-			acc_format++;
-		}
-		else if (format[i] == 'i')
-		{
-			hint = va_arg(args, int);
-			printf("%d", hint);
-			acc_format++;
-		}
-		else if (format[i] == 'f')
-		{
-			floot = va_arg(args, double);
-			printf("%f", floot);
-			acc_format++;
-		}
-		else if (format[i] == 's')
-		{
-			str = va_arg(args, char*);
-			printf("%s", str);
-			acc_format++;
-		}
-
-		if ((str == NULL || format[i + 1] != '\0') && (acc_format > 0))
-		{
-			printf(", ");
-			str = "(nil)";
+			if (fonc_type[j].acc_format == format[i])
+			{
+				fonc_type[j].f(args);
+				printf(", ");
+			}
+			j++;
 		}
 		i++;
 	}
-	printf("\n");
 	va_end(args);
+	printf("\n");
+}
+
+/**
+ *charr - print a char
+ *@args: the char to print
+ *Return: void return
+ */
+void charr(va_list args)
+{
+	printf("%c", va_arg(args, int));
+}
+
+/**
+ *intt - print an int
+ *@args: the int to print
+ *Return: void return
+ */
+void intt(va_list args)
+{
+	printf("%d", va_arg(args, int));
+}
+
+/**
+ *floatt - print a float
+ *@args: the float to print
+ *Return: void return
+ */
+void floatt(va_list args)
+{
+	printf("%f", va_arg(args, double));
+}
+
+/**
+ *string - print a string
+ *@args: the string to print
+ *Return: void return
+ */
+void string(va_list args)
+{
+	char *str = NULL;
+
+	str = va_arg(args, char *);
+	if (str == NULL)
+		str = "(nil)";
+	printf("%s", str);
 }
