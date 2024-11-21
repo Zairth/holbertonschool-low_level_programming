@@ -79,8 +79,5 @@ void floatt(va_list args)
  */
 void string(va_list args)
 {
-	char *str = NULL;
-
-	str = va_arg(args, char *);
-	printf("%s", str);
+	printf("%s", va_arg(args, char *));
 }
