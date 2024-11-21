@@ -3,9 +3,10 @@
 #include <stdarg.h>
 
 /**
- *Structure_Type - Structure_Type
- *@c: The char
- *@f: The function associated
+ * struct Structure_Type - the function to use depending on the acc_format
+ *
+ * @acc_format: The char
+ * @f: The function associated
  */
 typedef struct Structure_Type
 {
