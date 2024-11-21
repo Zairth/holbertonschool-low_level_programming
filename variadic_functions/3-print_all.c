@@ -10,13 +10,13 @@
 *Return: void return
 */
 void print_all(const char * const format, ...)
-{	
-	int i = 0;
+{
+	int hint, i = 0;
 	char charr;
 	char *str;
-	int hint;
 	float floot;
 	va_list args;
+
 	va_start(args, format);
 
 	while (format[i] != '\0')
