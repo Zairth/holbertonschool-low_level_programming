@@ -81,6 +81,7 @@ void floatt(va_list args)
 void string(va_list args)
 {
 	char *str = NULL;
+
 	str = va_arg(args, char *);
 	if (str == NULL)
 		str = "(nil)";
