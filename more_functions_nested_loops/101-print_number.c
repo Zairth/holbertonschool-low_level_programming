@@ -22,7 +22,7 @@ void print_number(int n)
 		n = n * (-1); /* Permet de convertir n d'un entier negatif a un entier positif pour les prochaines structures conditionnelles */
 		_putchar('-'); /* Imprime le signe ' - ' dans le cas ou n est negatif de base */
 	}
-	if (n != 0) 
+	if (n != 0)
 	{
 		if (n > modulo)
 			_putchar((n / 1000000000) + '0'); /* Si n est plus grand que le modulo (1 milliard), alors il imprime l'unite du milliard */
