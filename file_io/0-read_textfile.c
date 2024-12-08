@@ -20,18 +20,28 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	if (filename == NULL)
+	{
+		free(buffer);
 		return (0);
+	}
 
 	fd = open("Requiescat", O_RDONLY);
 	if (fd == -1)
+	{
+		free(buffer);
 		return (0);
+	}
 
 	bytesRead = read(fd, buffer, letters);
 	bytesWrite = write(STDOUT_FILENO, buffer, bytesRead);
 
 	if (bytesRead == -1 || bytesWrite != bytesRead)
+	{
+		free(buffer);
 		return (0);
+	}
 
+	free(buffer);
 	close(fd);
 	return (bytesWrite);
 }
