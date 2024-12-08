@@ -12,7 +12,6 @@
 int create_file(const char *filename, char *text_content)
 {
 	int file, i = 0;
-	ssize_t bytesWrited;
 
 	while (text_content[i] != '\0')
 		i++;
