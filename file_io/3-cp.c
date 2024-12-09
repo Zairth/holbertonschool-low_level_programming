@@ -72,7 +72,7 @@ void cp_from_to_file(const char *from_filename, const char *to_file)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", to_file);
 		exit(99);
 	}
-	writed = write(fd_to, buffer, total_read);
+	writed = write(fd_to, big_buffer, total_read);
 	if (writed < 0 || writed != total_read)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_file);
