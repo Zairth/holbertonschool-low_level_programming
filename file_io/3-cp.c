@@ -31,13 +31,17 @@ int main(int argc, char *argv[])
 */
 void cp_from_to_file(const char *from_filename, const char *to_file)
 {
-	int fd_from, fd_to, closed_from, closed_to;
+	int fd_from, fd_to, closed_from, closed_to, i, total_read = 0;
 	char *buffer;
+	char *big_buffer;
 	ssize_t readed;
 	ssize_t writed;
 
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
+		return;
+	big_buffer = malloc(sizeof(char) * 2880);
+	if (big_buffer == NULL)
 		return;
 
 	fd_from = open(from_filename, O_RDONLY);
@@ -46,8 +50,17 @@ void cp_from_to_file(const char *from_filename, const char *to_file)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_filename);
 		exit(98);
 	}
-	readed = read(fd_from, buffer, 1024);
-	if (readed < 0 || readed > 1024)
+	while ((readed = read(fd_from, buffer, 1024)) > 0)
+	{
+		i = 0;
+		while (i < readed)
+		{
+			big_buffer[total_read + i] = buffer[i];
+			i++;
+		}
+		total_read += readed;
+	}
+	if (total_read < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_filename);
 		exit(98);
@@ -59,8 +72,8 @@ void cp_from_to_file(const char *from_filename, const char *to_file)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", to_file);
 		exit(99);
 	}
-	writed = write(fd_to, buffer, readed);
-	if (writed < 0 || writed != readed)
+	writed = write(fd_to, buffer, total_read);
+	if (writed < 0 || writed != total_read)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_file);
 		exit(99);
