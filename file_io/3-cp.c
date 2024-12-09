@@ -92,7 +92,7 @@ void cp_from_to_file(const char *from_filename, const char *to_file)
 		exit(100);
 	}
 
-	while (readed > 0)
+	while (total_read > 0)
 		free(buffer);
 	free(big_buffer);
 }
