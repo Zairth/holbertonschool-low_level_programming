@@ -68,8 +68,10 @@ void cp_from_to_file(const char *from_filename, const char *to_file)
 
 	fd_to = open(to_file, O_CREAT | O_WRONLY, 0664);
 	if (fd_to == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_file);
 		exit(99);
-
+	}
 	writed = write(fd_to, big_buffer, total_read);
 	if (writed < 0 || writed != total_read)
 	{
