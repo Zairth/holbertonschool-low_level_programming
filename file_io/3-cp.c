@@ -91,5 +91,8 @@ void cp_from_to_file(const char *from_filename, const char *to_file)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", closed_to);
 		exit(100);
 	}
-	free(buffer);
+
+	while (readed > 0)
+		free(buffer);
+	free(big_buffer);
 }
