@@ -43,39 +43,39 @@ void cp_from_to_file(const char *from_filename, const char *to_file)
 	fd_from = open(from_filename, O_RDONLY);
 	if (fd_from == -1)
 	{
-		perror("Error: Can't read from file NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_filename);
 		exit(98);
 	}
 	readed = read(fd_from, buffer, 1024);
 	if (readed < 0)
 	{
-		perror("Error: Can't read from file NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_filename);
 		exit(98);
 	}
 
 	fd_to = open(to_file, O_CREAT | O_WRONLY, 0664);
 	if (fd_to == -1)
 	{
-		perror("Error: Can't read from file NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", to_file);
 		exit(99);
 	}
 	writed = write(fd_to, buffer, readed);
 	if (writed < 0 || writed != readed)
 	{
-		perror("Error: Can't write to NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_file);
 		exit(99);
 	}
 
 	closed_from = close(fd_from);
 	if (closed_from == -1)
 	{
-		perror("Error: Can't close fd FD_VALUE");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", closed_from);
 		exit(100);
 	}
 	closed_to = close(fd_to);
 	if (closed_to == -1)
 	{
-		perror("Error: Can't close fd FD_VALUE");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", closed_to);
 		exit(100);
 	}
 	free(buffer);
