@@ -47,7 +47,7 @@ void cp_from_to_file(const char *from_filename, const char *to_file)
 		exit(98);
 	}
 	readed = read(fd_from, buffer, 1024);
-	if (readed < 0)
+	if (readed < 0 || readed > 1024);
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_filename);
 		exit(98);
